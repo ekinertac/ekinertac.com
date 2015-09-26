@@ -34,13 +34,13 @@
 &lt;p&gt;Snippetler daha önceden hazırladığımız hazır kod öbekleridir. Çoğumuzun yaptığı projelerde bir kodun aynısını daha önceki projelerden 'aha ben bunu xxx projesinde yapmıştım ordan copy+paste edeyim' dediğimiz kodlar olmuştur. Bu tarz işlemleri her seferinde önceki projeye git kodu orda bul, kopyala, yapıştır gerekli yerleri değiştir gibi sıradan işlemleri tekrar tekrar yapmamak için menüden &lt;code&gt;Tools &amp;gt; New Snippet...&lt;/code&gt;'i seçiyoruz.&lt;/p&gt;
 &lt;p&gt;Ardından Sublime bie yeni bir dosya açıyor, dosya içeriği şöyle:&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;snippet&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;content&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;![&lt;/span&gt;&lt;span class="nx"&gt;CDATA&lt;/span&gt;&lt;span class="err"&gt;[&lt;/span&gt;
-&lt;span class="nx"&gt;Hello&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;this&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;is&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;snippet&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="nx"&gt;.&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;content&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;![CDATA[&lt;/span&gt;
+&lt;span class="cp"&gt;Hello, ${&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="cp"&gt;} is a ${&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;snippet&lt;/span&gt;&lt;span class="cp"&gt;}.&lt;/span&gt;
 &lt;span class="cp"&gt;]]&amp;gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/content&amp;gt;&lt;/span&gt;
     &lt;span class="c"&gt;&amp;lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&amp;gt;&lt;/span&gt;
-    &lt;span class="c"&gt;&amp;lt;!-- &amp;lt;tabTrigger&amp;gt;hello&amp;lt;/tabTrigger&amp;gt; --&amp;gt;&lt;/span&gt;
+    &lt;span class="c"&gt;&amp;lt;!-- &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;tabTrigger&amp;gt;&lt;/span&gt;&lt;span class="c"&gt;hello&amp;lt;/tabTrigger&amp;gt; --&amp;gt;&lt;/span&gt;
     &lt;span class="c"&gt;&amp;lt;!-- Optional: Set a scope to limit where the snippet will trigger --&amp;gt;&lt;/span&gt;
-    &lt;span class="c"&gt;&amp;lt;!-- &amp;lt;scope&amp;gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;&lt;/span&gt;
+    &lt;span class="c"&gt;&amp;lt;!-- &lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;&lt;span class="c"&gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/snippet&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -53,23 +53,23 @@
 &lt;p&gt;Değişikliklerimizi yapıp kaydetmek istediğimiz zaman snippet dosyasını Sublime'ın kendi dosyalarının bulunduğu alana kaydetmemiz önemli, zaten kaydetmek istediğimiz zaman bize direk kendi dosyalarının bulunduğu klasör içinde bulunan bizim için ayrılmış olan &lt;code&gt;User&lt;/code&gt; klasörünü öneriyor. Kaydedeceiğimiz dosya adını yazıp dosya uzantısını ise &lt;code&gt;.sublime-snippet&lt;/code&gt; yapıp kaydediyoruz.&lt;/p&gt;
 &lt;p&gt;Hemen bir snippet'de biz yapalım. Menüden &lt;code&gt;Tools &amp;gt; New Snippet&lt;/code&gt;'i seçip yeni bir dosya açıyoruz ve default değerleri kaldırıyoruz.&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;snippet&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;content&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;![&lt;/span&gt;&lt;span class="nx"&gt;CDATA&lt;/span&gt;&lt;span class="err"&gt;[&lt;/span&gt;
-&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="bp"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ajax&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
-    &lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="nb"&gt;url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;${1:url-to-ajax-request}&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="kd"&gt;data&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kd"&gt;data&lt;/span&gt;&lt;span class="p"&gt;}:&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kd"&gt;data&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;      
-    &lt;span class="p"&gt;},&lt;/span&gt;
-    &lt;span class="nx"&gt;beforeSend&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
-        &lt;span class="c1"&gt;// loading gif&lt;/span&gt;
-    &lt;span class="p"&gt;},&lt;/span&gt;
-    &lt;span class="nx"&gt;success&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;response&lt;/span&gt;&lt;span class="p"&gt;}){&lt;/span&gt;
-        &lt;span class="nx"&gt;console.log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;response&lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
-    &lt;span class="p"&gt;},&lt;/span&gt;
-    &lt;span class="nb"&gt;error&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nx"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
-        &lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Oops! There is an error reported!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;});&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;content&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;![CDATA[&lt;/span&gt;
+&lt;span class="cp"&gt;var request = \$.ajax({&lt;/span&gt;
+&lt;span class="cp"&gt;    type: &amp;#39;POST&amp;#39;,&lt;/span&gt;
+&lt;span class="cp"&gt;    url: &amp;#39;${&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ajax&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="cp"&gt;}&amp;#39;,&lt;/span&gt;
+&lt;span class="cp"&gt;    data: {&lt;/span&gt;
+&lt;span class="cp"&gt;        ${&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="cp"&gt;}:${&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="cp"&gt;}      &lt;/span&gt;
+&lt;span class="cp"&gt;    },&lt;/span&gt;
+&lt;span class="cp"&gt;    beforeSend:function(){&lt;/span&gt;
+&lt;span class="cp"&gt;        // loading gif&lt;/span&gt;
+&lt;span class="cp"&gt;    },&lt;/span&gt;
+&lt;span class="cp"&gt;    success:function(${&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="cp"&gt;}){&lt;/span&gt;
+&lt;span class="cp"&gt;        console.log(${&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="cp"&gt;});&lt;/span&gt;
+&lt;span class="cp"&gt;    },&lt;/span&gt;
+&lt;span class="cp"&gt;    error:function(){&lt;/span&gt;
+&lt;span class="cp"&gt;        alert(&amp;#39;Oops! There is an error reported!&amp;#39;)  &lt;/span&gt;
+&lt;span class="cp"&gt;    }&lt;/span&gt;
+&lt;span class="cp"&gt;});&lt;/span&gt;
 &lt;span class="cp"&gt;]]&amp;gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/content&amp;gt;&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;lt;tabTrigger&amp;gt;&lt;/span&gt;ajax&lt;span class="nt"&gt;&amp;lt;/tabTrigger&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/snippet&amp;gt;&lt;/span&gt;
@@ -116,13 +116,13 @@
 &lt;p&gt;Desteklediği tüm snippetlara göz atmak için &lt;strong&gt;Djaneiro&lt;/strong&gt;'nun &lt;strong&gt;&lt;a href="https://github.com/squ1b3r/Djaneiro"&gt;GitHub sayfasına&lt;/a&gt;&lt;/strong&gt; bakabilirsiniz. Çok fazlalar : )&lt;/p&gt;
 &lt;h4 id="emmet-zen-coding"&gt;Emmet / Zen Coding&lt;/h4&gt;
 &lt;p&gt;Önceden &lt;strong&gt;zen coding&lt;/strong&gt; vardı gayet güzel çalışıyodu, sonradan uğdate ettiler ismini değiştirmişler &lt;strong&gt;Emmet&lt;/strong&gt; olmuş, eklentide tamamen değişmiş, sırf zorunluluktan kullanıyorum. Çok fazla sıkıntı yaşatıyor bazı durumlarda, hala hataları mevcut.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nx"&gt;ul&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;li&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;
-&lt;span class="c1"&gt;// satırını yazıp tab&amp;#39;a bastığınızda&lt;/span&gt;
-&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;ul&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;li&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nx"&gt;li&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;li&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nx"&gt;li&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nx"&gt;ul&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="c1"&gt;// şeklinde html oluşturuyor&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;ul&amp;gt;li*2&amp;gt;a
+// satırını yazıp tab&amp;#39;a bastığınızda
+&lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+// şeklinde html oluşturuyor
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -146,188 +146,4 @@
 &lt;p&gt;Adından da belli olduğu gibi syntax düzeni bozuk olan &lt;strong&gt;json&lt;/strong&gt; dosyalarını düzenlemek için kullanıyorum. &lt;code&gt;kntrl/Ctrl + J&lt;/code&gt; ısayolu ile çalışıyor, tertemiz json veriyor size.&lt;/p&gt;
 &lt;p&gt;Kullandığım paketler şimdlik bunlar yeni eklediğim bir paket olursa yazıyı güncellerim.&lt;/p&gt;
 &lt;p&gt;Bunlara ek olarak yine Package Control içinde sonradan eklenecek olan dillerin syntax highlighterları var, benim kullandıklarım &lt;code&gt;Less, Stylus, Jade, nginx, SCSS&lt;/code&gt; gibi yeni olan diller. Arasında kullandığınız varsa onlarıda yüklerseniz tadından yenmez Sublime Text.&lt;/p&gt;
-&lt;p&gt;Farklı eklentileri ve benim kullandıklarımdan daha iyisi var diyorsanız yorumlarda dört gözle bekliyorum. &lt;/p&gt;</summary><category term="sublime text"></category><category term="text editor"></category></entry><entry><title>Pelican'a geçiş</title><link href="http://ekinertac.com/pelican-a-gecis.html" rel="alternate"></link><updated>2012-02-27T15:40:00+02:00</updated><author><name>ekinertac</name></author><id>tag:ekinertac.com,2012-02-27:pelican-a-gecis.html</id><summary type="html">&lt;p&gt;&lt;meta property="og:image" content="http://www.php2s.com/wp-content/uploads/2012/06/python-logo-official.png"/&gt;&lt;/p&gt;
-&lt;p&gt;Konuya direk giriş yapmadan önce hayatımıza yeni yeni girmiş olan &lt;strong&gt;Static Blogging Engine&lt;/strong&gt; terimi üzerinde durmak lazım. Nedir bu &lt;strong&gt;Static Blogging Engine&lt;/strong&gt; ? &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Static Blogging Engine&lt;/strong&gt; kısa olarak yazdığınız &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt;, &lt;a href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt; formatlı metin dosyalarınızı, muteşem bir şekilde static, yani herhangi bir server-side dile ihtiyaç duymadan yayınlayabileceğiniz html tabanlı bir bloga çeviren şahane yapıya deniyor.&lt;/p&gt;
-&lt;p&gt;İstediğiniz kadar caching yapın, dosya sıkıştırın html kadar hızlı render edilen bir yazılıma sahip olmak pekte mümkün bir olay değil. Siz yazıları &lt;strong&gt;markdown&lt;/strong&gt; olarak yazıyorsunuz, blog engine'iniz size html yapısnı oluşturuyor. Tabi html diyince aklınıza sadece yazılardan oluşan sayfalar gelmesin, bunun içersinde bir blogda ihtiyaç duyulan neredeyse herşey mevcut. Tagler, kategoriler, comment sistemi, sosyal medya entegresi vs ne ararsanız çoğunlukla var.&lt;/p&gt;
-&lt;p&gt;Herşey o kadar basit düşünülmüş ki, ne bir admin paneliniz var ne başka bir yönetim sayfanız var. Herşey çok iyi bildiğiniz dosya sistemi üzerine kurulu.&lt;/p&gt;
-&lt;blockquote class="twitter-tweet" align="center" style="margin-bottom:20px"&gt;&lt;p&gt;I very much dislike the &lt;a href="https://twitter.com/search/%23wordpress"&gt;#wordpress&lt;/a&gt; editor … seriously considering moving everything to &lt;a href="https://twitter.com/search/%23pelican"&gt;#pelican&lt;/a&gt; &lt;a href="http://t.co/IZeWLLR8" title="http://blog.notmyidea.org/pelican-a-simple-static-blog-generator-in-python.html"&gt;blog.notmyidea.org/pelican-a-simp…&lt;/a&gt;&lt;/p&gt;&amp;mdash; Andrew Lombardi (@kinabalu) &lt;a href="https://twitter.com/kinabalu/status/273147147430543360"&gt;November 26, 2012&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;script async src="http://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-
-&lt;blockquote&gt;&lt;/blockquote&gt;
-&lt;p&gt;Bundan daha önce Wordpress başta olmak üzere Tumblr dan tutunda özene bezene CodeIgniter da yazdığım blog sistemlerine kadar çoğunu kullandım. Son olarak Django'ya çok fazla yöneldiğim için Django çatısı altında bir blog oluşturdum ama aklımın bir köşesinde hep bir &lt;strong&gt;Static Blogging Engine&lt;/strong&gt; kullanarak bir blog yapma isteğim vardı. &lt;/p&gt;
-&lt;p&gt;Peki kullanabileceğimiz Engine'ler hangileri ? &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id="octopress"&gt;&lt;a href="http://octopress.org/"&gt;Octopress&lt;/a&gt;&lt;/h4&gt;
-&lt;br /&gt;
-Octopress, &lt;a href="http://brandonmathis.com/"&gt;Brandon Mathis&lt;/a&gt; tarafından tasarlanan &lt;a href="http://github.com/mojombo/jekyll"&gt;Jekyll&lt;/a&gt; için hazırlanan, &lt;a href="http://pages.github.com/"&gt;Github Pages&lt;/a&gt;'in arkasında da kullanılan bir statik blog framework'ü. En popüler engine olarak görülüyor ve gerçektende öyle.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Octopress'den sonra Ruby ile hazırlanmış &lt;a href="http://webby.rubyforge.org/"&gt;Webby&lt;/a&gt;, &lt;a href="http://staticmatic.rubyforge.org/"&gt;StaticMatic&lt;/a&gt; ve &lt;a href="http://cloudhead.io/toto"&gt;toto&lt;/a&gt; isimlerinde farklı blog engine'leride mevcut.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id="pelican"&gt;&lt;a href="http://docs.getpelican.com/en/latest/"&gt;Pelican&lt;/a&gt;&lt;/h4&gt;
-&lt;br /&gt;
-Pelican benimde kullandığım Python için yazılmış Octopress kadar başarılı bir blog framework'ü. Pelican'ı seçmemdeki tek amaç Python ekosistemine Ruby'e kıyasla çok daha alışkın olmam. Django/Jinja2 template taglerini desteklemeside ikinci büyük sebebim. Templateleri düzenlemek elim bu template diline alışkın olduğum için çok kolay oldu benim için.&lt;p&gt;&lt;a href="http://calepin.co/"&gt;Calepin&lt;/a&gt; ise Pelican için hazırlanmış, Dropbox üzerinde çalışan bir             blog &lt;strong&gt;hosting&lt;/strong&gt; sistemi ve evet tahmin edebileceğiniz gibi tamamen &lt;strong&gt;ücretsiz&lt;/strong&gt;. Calepin'in kullandığı fikir çok iyi bu arada, bahsetmeden geçemeyeceğim.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;h4 id="blosxom"&gt;Blosxom&lt;/h4&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Blosxom için malesef link veremiyorum çünkü bu servis artık &lt;strong&gt;&lt;a href="http://www.blosxom.com/"&gt;kapatılmış durumda&lt;/a&gt;&lt;/strong&gt;. Static Blogging Engine sistemini geliştiren ilk servis olduğu için buraya eklemeyi uygun gördüm. Belki merak edip araştırmak isteyenler olabilir.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;h4 id="second-crack"&gt;&lt;a href="https://github.com/marcoarment/secondcrack"&gt;Second Crack&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Second Crack, PHP için hazırlanmış bir diğer statik blogging framework'ü.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;h4 id="blacksmith"&gt;&lt;a href="http://blog.nodejitsu.com/introducing-blacksmith"&gt;Blacksmith&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Blacksmith ise Node.js'e daha yakın olanların kullanacağı 'cutting-edge' statik blog sistemlerinden en genci.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Bunlar bana yetmez daha fazla blog engine istiyorum diyenleriniz varsa 32 adet blog engine'in anlatıldığı &lt;a href="https://twitter.com/treitnauer"&gt;Timo Reitnauer&lt;/a&gt;'ın yazmış olduğu devasa yazıya &lt;a href="https://iwantmyname.com/blog/2011/02/list-static-website-generators.html"&gt;göz atabilirsiniz&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Pelican&lt;/strong&gt; kullandığım için konuya bu statik framework üzerinden devam ediyorum. &lt;/p&gt;
-&lt;p&gt;Pelican'ın kurulumu, tema seçimi ve yayına alması üzerinde editleme yapmayacaksaksanız bir kaç dakikanızı alabilir.&lt;/p&gt;
-&lt;p&gt;Kendimize bir terminal açıp hemen virtualenv'mizi oluşturmaya başlıyoruz. (sisteminizde virtualenv'nin kurulu olduğunu düşünüyorum, kurulu olmayanlar &lt;a href="/virtualenv-kurulumu.html"&gt;buradan devam edebilirler&lt;/a&gt;)&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;peli&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;virtualenv&lt;/span&gt; &lt;span class="n"&gt;env&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;activate&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;sub&gt;&lt;sup&gt;* işareti klavyedeki &lt;code&gt;tab&lt;/code&gt; karateri için&lt;/sup&gt;&lt;/sub&gt;&lt;/p&gt;
-&lt;p&gt;Pelican kurulumu bu kadar basit, ancak küçücük bir sıkıntımız var. Pelican'da Markdown desteği opsiyonel olarak geliyor o yüzden pelican kurulduktan sonrada Markdown kurmaya ihtiyacımız var.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Markdown da virtualenv'mize kurulduktan sonra, Pelican için hemen bir yapı oluşturabiliyoruz&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Bu komutu çalıştırdıktan sonra wizard bize birkaç soru soruyor&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;Welcome&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt; &lt;span class="n"&gt;v3&lt;/span&gt;&lt;span class="mf"&gt;.1.1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-
-&lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;create&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;based&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-
-&lt;span class="n"&gt;Please&lt;/span&gt; &lt;span class="n"&gt;answer&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;following&lt;/span&gt; &lt;span class="n"&gt;questions&lt;/span&gt; &lt;span class="n"&gt;so&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="n"&gt;generate&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;
-&lt;span class="n"&gt;needed&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Where&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;create&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;[.]&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;What&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="n"&gt;Ekin&lt;/span&gt; &lt;span class="n"&gt;Erta&lt;/span&gt;&lt;span class="err"&gt;ç&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;WebBlog&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Who&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;author&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="n"&gt;ekinertac&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;What&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="k"&gt;default&lt;/span&gt; &lt;span class="n"&gt;language&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;tr&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;specify&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;URL&lt;/span&gt; &lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.,&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//example.com   (Y/n) n&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;enable&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt; &lt;span class="n"&gt;pagination&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;How&lt;/span&gt; &lt;span class="n"&gt;many&lt;/span&gt; &lt;span class="n"&gt;articles&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;generate&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;Makefile&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;easily&lt;/span&gt; &lt;span class="n"&gt;manage&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="k"&gt;auto&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;reload&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;simpleHTTP&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;assist&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;theme&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt; &lt;span class="n"&gt;development&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;FTP&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;SSH&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;Dropbox&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
-&lt;span class="n"&gt;Done&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Your&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ekinertac&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Sites&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;project&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Sorduğu sorular sırasıyla,&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Blog dosyalarını nerede tutmak istediğinizi soruyor, &lt;code&gt;project&lt;/code&gt; yazarak bulunduğum klasörde &lt;code&gt;project&lt;/code&gt; adında bir klasör oluşturup onun içine kurmasını istedim&lt;/li&gt;
-&lt;li&gt;Blog başlığı ?&lt;/li&gt;
-&lt;li&gt;Blog yazarı ?&lt;/li&gt;
-&lt;li&gt;Web sitesinin dili ?&lt;/li&gt;
-&lt;li&gt;Kullanacağınız domain ?&lt;/li&gt;
-&lt;li&gt;Pagination kullanacakmısınız ?&lt;/li&gt;
-&lt;li&gt;Sayfa başına kaç adet yazı olacağı ?&lt;/li&gt;
-&lt;li&gt;Sayfanızı kolayca konfigüre edebilmek için Makefile oluşuturulsunmu ?&lt;/li&gt;
-&lt;li&gt;templateler için veya yazı yazarken live olarak değişiklikleri görebilmeniz için Pelicanın sunduğu script desteği ?&lt;/li&gt;
-&lt;li&gt;FTP desteği ?&lt;/li&gt;
-&lt;li&gt;SSH desteği ?&lt;/li&gt;
-&lt;li&gt;Dropbox desteği ?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Bu sorulara cevap verdikten sonra blogumuz neredeyse hazır durumda.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;project/content&lt;/code&gt; klasörünün içine girip ilk yazınızı yazmaya başlayabilirsiniz. Klasörün içinde &lt;code&gt;first-post.md&lt;/code&gt; adlı bir dosya oluşturuyorum ve dosyanın içine &lt;strong&gt;herhangi&lt;/strong&gt; bir text editöründe&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;ge&lt;/span&gt;&lt;span class="err"&gt;ç&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="err"&gt;ş&lt;/span&gt;
-&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2012&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;02&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;27&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;
-&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
-&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Writings&lt;/span&gt;
-&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gecis&lt;/span&gt;
-&lt;span class="n"&gt;Author&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ekinertac&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;satırlarını ekliyorum. Bu satırlar görüldüğü gibi blog post'unun meta bilgilerini saklıyor.&lt;br /&gt;
-İki alt satıra geçerek yazmaya başlıyorum.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;ge&lt;/span&gt;&lt;span class="err"&gt;ç&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="err"&gt;ş&lt;/span&gt;
-&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2012&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;02&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;27&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;
-&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
-&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Writings&lt;/span&gt;
-&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gecis&lt;/span&gt;
-&lt;span class="n"&gt;Author&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ekinertac&lt;/span&gt;
-
-&lt;span class="n"&gt;Konuya&lt;/span&gt; &lt;span class="n"&gt;direk&lt;/span&gt; &lt;span class="n"&gt;giri&lt;/span&gt;&lt;span class="err"&gt;ş&lt;/span&gt; &lt;span class="n"&gt;yapmadan&lt;/span&gt; &lt;span class="err"&gt;ö&lt;/span&gt;&lt;span class="n"&gt;nce&lt;/span&gt; &lt;span class="n"&gt;hayat&lt;/span&gt;&lt;span class="err"&gt;ı&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="err"&gt;ı&lt;/span&gt;&lt;span class="n"&gt;za&lt;/span&gt; &lt;span class="n"&gt;yeni&lt;/span&gt; &lt;span class="n"&gt;yeni&lt;/span&gt; &lt;span class="n"&gt;girmi&lt;/span&gt;&lt;span class="err"&gt;ş&lt;/span&gt; &lt;span class="n"&gt;olan&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;Static&lt;/span&gt; &lt;span class="n"&gt;Blogging&lt;/span&gt; &lt;span class="n"&gt;Engine&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="n"&gt;terimi&lt;/span&gt; &lt;span class="err"&gt;ü&lt;/span&gt;&lt;span class="n"&gt;zerinde&lt;/span&gt; &lt;span class="n"&gt;durmak&lt;/span&gt; &lt;span class="n"&gt;laz&lt;/span&gt;&lt;span class="err"&gt;ı&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Nedir&lt;/span&gt; &lt;span class="n"&gt;bu&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;Static&lt;/span&gt; &lt;span class="n"&gt;Blogging&lt;/span&gt; &lt;span class="n"&gt;Engine&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;hemen ardından hızlı bir test için terminale geri dönüp&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;komutunu çalıştırıyorum, ve herhangi bir hata yoksa, &lt;code&gt;project/output&lt;/code&gt; klasörü altında .html dosyalarım &lt;strong&gt;yayınlanmaya hazır&lt;/strong&gt; olarak bekliyor.&lt;/p&gt;
-&lt;p&gt;Daha fazla dökümantasyon için Pelican'ın &lt;strong&gt;bol detaylı&lt;/strong&gt; &lt;a href="http://docs.getpelican.com/en/latest/getting_started.html"&gt;dökümantasyon&lt;/a&gt; sayfasını ziyaret edebilirsiniz.&lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry><entry><title>Virtual Environment Kurulumu</title><link href="http://ekinertac.com/virtualenv-kurulumu.html" rel="alternate"></link><updated>2012-02-26T11:20:00+02:00</updated><author><name>ekinertac</name></author><id>tag:ekinertac.com,2012-02-26:virtualenv-kurulumu.html</id><summary type="html">&lt;p&gt;Eğer python üzerinde geliştirme yapacaksanız, &lt;code&gt;virtualenv&lt;/code&gt; yani Sanal Geliştirme Ortamı kurmanız çok çok faydanıza olacaktır. &lt;br /&gt;
-Virtualenv'i farklı python versiyonları, farklı paketler, kendi yazdığınız executable scriptler için kullanabilirsiniz.&lt;/p&gt;
-&lt;p&gt;Sisteminizde &lt;code&gt;easy_install, pip&lt;/code&gt; gibi python paket manager'ları yüklümü değilmi kontrol edelim, eğer hiç biri yüklü değilse  kuruluma &lt;code&gt;setup-tools&lt;/code&gt; ile başlayalım.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;easy_install&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;ikisinden birini terminalde çalıştırdığınızda &lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;easy_install&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;
-&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;satırlarından farklı çıktı alıyorsanız ikisinden birisi kuruludur. Eğer &lt;code&gt;easy_install&lt;/code&gt; kurulu ise &lt;code&gt;pip&lt;/code&gt; kurmamız şart.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;easy_install&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;sistemde &lt;code&gt;easy_install&lt;/code&gt; dahi yüklü değilse &lt;code&gt;setup-tools&lt;/code&gt; ile devam ediyoruz. &lt;a href="https://pypi.python.org/pypi/setuptools#downloads"&gt;PyPi - SetupTools&lt;/a&gt; sayfasından yanında &lt;strong&gt;Source&lt;/strong&gt; yazan linke tıklayıp son sürümü ediniyoruz.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="n"&gt;zxvf&lt;/span&gt; &lt;span class="n"&gt;setuptools&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.6&lt;/span&gt;&lt;span class="n"&gt;c11&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gz&lt;/span&gt; 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;setuptools&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.6&lt;/span&gt;&lt;span class="n"&gt;c11&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;yazdıktan sonra setuptools kurulmuş durumda. Eğer &lt;code&gt;permission&lt;/code&gt; hatası alırsanız &lt;code&gt;sudo python setup.py install&lt;/code&gt; deneyerek kurulumu root olarak tamamlayabilirsiniz.&lt;/p&gt;
-&lt;p&gt;Setuptools kurulumu tamamlandıktan sonra:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;easy_install&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;virtualenv&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;virtualenv&lt;/span&gt; &lt;span class="n"&gt;env_adi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Virtualenv yapısı için bir klasör yapısı geliştirmenizi öneririm yoksa işler sarpa sarıyor bir süre sonra.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;Sites&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;proje_adi_1&lt;/span&gt;
-    &lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;env_adi&lt;/span&gt;
-    &lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt;
-    &lt;span class="err"&gt;│&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;proje_adi_2&lt;/span&gt;
-    &lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;env_adi&lt;/span&gt;
-    &lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt;
-    &lt;span class="err"&gt;│&lt;/span&gt;
-    &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;proje_adi_3&lt;/span&gt;
-        &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;env_adi&lt;/span&gt;
-        &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Şeklinde oluşan bir yapı şimdiye kadar kullandığım en rahat ettiğim klasör yapısı.&lt;/p&gt;</summary><category term="python"></category><category term="virtualenv"></category></entry></feed>
+&lt;p&gt;Farklı eklentileri ve benim kullandıklarımdan daha iyisi var diyorsanız yorumlarda dört gözle bekliyorum. &lt;/p&gt;</summary><category term="sublime text"></category><category term="text editor"></category></entry></feed>

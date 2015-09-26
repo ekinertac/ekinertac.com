@@ -5,9 +5,10 @@ AUTHOR = u'Ekin Ertaç'
 SITENAME = u'/bin/blog/ekinertac'
 SITEURL = 'http://ekinertac.com'
 TIMEZONE = 'Europe/Istanbul'
-THEME = "ekin-octopress"
+THEME = "pelican-octopress-theme"
 DEFAULT_LANG = u'tr'
-PAGE_DIR= 'pages'
+
+STATIC_PATHS = ['images', ]
 
 MD_EXTENSIONS = [
     # 'toc',
@@ -25,10 +26,10 @@ GOOGLE_ANALYTICS = "UA-9694343-1"
 
 # Blogroll
 LINKS =  (
-    (u'Fatih Erikli', 'http://fatiherikli.com'),
-    (u'Olgay Sezgin', 'http://olgaysezgin.com'),
-    (u'Yaşar İçli', 'http://yasaricli.com'),
-    (u'Erdem Özkol', 'http://erdemozkol.com'),
+#    (u'Fatih Erikli', 'http://fatiherikli.com'),
+#    (u'Olgay Sezgin', 'http://olgaysezgin.com'),
+#    (u'Yaşar İçli', 'http://yasaricli.com'),
+#    (u'Erdem Özkol', 'http://erdemozkol.com'),
 )
 
 # Social widget
