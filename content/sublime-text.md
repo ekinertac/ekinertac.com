@@ -5,9 +5,11 @@ Category: Writings
 Slug: sublime-text
 Author: ekinertac
 
-Text editörler, IDE'ler... uğruna internette forumlarda, ofiste arkadaşlarımızla tartıştığımız, üstüne gül koklamadığımız editörler. Herkesin kullandığı editör kendisine göre en iyisi, ondan daha iyisi **yok**. **Olamazda** zaten, en iyi editör herzaman en iyi, en etkili şekilde **kullanabildiğiniz** editördür. 
+![Cover Image](images/sublime-text.jpg)
 
-Kullanabildiğiniz diyorum çünkü editörün **core** özelliklerini kullanabilmekte bir marifet, sadece kod yazıp save ediyorsanız zaten farketmez hangi editörü kullandığınız, notepad.exe bile işinizi görür, gık demezsiniz. Yazının buradan sonraki bölümü bu tarzdaki kullanıcıları çok **ilgilendirmiyor** zaten. 
+Text editörler, IDE'ler... uğruna internette forumlarda, ofiste arkadaşlarımızla tartıştığımız, üstüne gül koklamadığımız editörler. Herkesin kullandığı editör kendisine göre en iyisi, ondan daha iyisi **yok**. **Olamazda** zaten, en iyi editör herzaman en iyi, en etkili şekilde **kullanabildiğiniz** editördür.
+
+Kullanabildiğiniz diyorum çünkü editörün **core** özelliklerini kullanabilmekte bir marifet, sadece kod yazıp save ediyorsanız zaten farketmez hangi editörü kullandığınız, notepad.exe bile işinizi görür, gık demezsiniz. Yazının buradan sonraki bölümü bu tarzdaki kullanıcıları çok **ilgilendirmiyor** zaten.
 
 Birde editörün core özelliklerini zaten halihazırda kullanan, onlar ile yetinmeyip plugin üstüne plugin kuran, gün be gün yeni update varmı diye kontrol eden bir tayfa varki onlar bu yazının odak noktası. **Kedi canını yediklerim.**
 
@@ -28,16 +30,16 @@ Sublime Text açıldıktan sonra, halihazırda içinde kodların olduğu bir kla
 Yukarıdaki menüden Goto kısmına gittiğinizde birkaç özellik görüyorsunuz bunlardan bazılarını günlük işlerinizde sürekli kullanacaksınız, bazılarınıda belki hiç kullanmayacaksınız.
 
 ####Goto Anything
-Goto Anything'e menüden `Goto > Goto Anything...` sekmesinden ulaşılabildiği gibi klavyeden `Cmd/Ctrl + P` veya `Cmd/Ctrl + T` ye basarak de ulaşabiliyoruz. Goto Anything bize bulunduğumuz proje içerisindeki herhangi bir dosyaya ulaşmamızı sağlıyor. Sadece dosya adının birkaç harfini yazmamız yeterli. 
+Goto Anything'e menüden `Goto > Goto Anything...` sekmesinden ulaşılabildiği gibi klavyeden `Cmd/Ctrl + P` veya `Cmd/Ctrl + T` ye basarak de ulaşabiliyoruz. Goto Anything bize bulunduğumuz proje içerisindeki herhangi bir dosyaya ulaşmamızı sağlıyor. Sadece dosya adının birkaç harfini yazmamız yeterli.
 
 >Sublime'ın bu panelden açılan menülerinde bir güzellik var aradığınız şeyin tam adını veya ilk bir kaç harfini yazmak zorunda değilsiniz, diyelimki `CodeClassTextSelector` diye bir class arıyorsunuz arama kutusuna `ccts` gibi birşeyler yazmanız onu bulabilmeniz için yeterli oluyor.
 
-![Goto Anything](../images/screen-shot-2013-03-01-at-71134-am.png)
+![Goto Anything](images/screen-shot-2013-03-01-at-71134-am.png)
 
 ####Goto Symbol
 Goto Symbol özelliğide anything özelliği kadar kullanışlı, editörde açık olan dosyadaki  fonksiyonları, classları, idleri kısaca tüm keywordleri yakalayıp size getiren bir özellik. `Cmd/Ctrl + R` kısayoluyla açtığınız panelde `cre` yazıyorum ve bana `cre` ile başlıyan tüm fonksiyon veya class'ları bulup getiriyor.
 
-![Goto Symbol](../images/screen-shot-2013-03-01-at-73247-am.png)
+![Goto Symbol](images/screen-shot-2013-03-01-at-73247-am.png)
 
 ####Goto Line
 Goto Line özelliği de öncekilere benzeyen bir özellik, `kntrl/Ctrl + G` kısayoluyla çalışıyor ve sizi istediğiniz satır numarasına götürüyor.
@@ -60,7 +62,7 @@ Kod tamamlama olayı her editörün olmazsa olmazlarından artık, daha çok bir
 Snippetler daha önceden hazırladığımız hazır kod öbekleridir. Çoğumuzun yaptığı projelerde bir kodun aynısını daha önceki projelerden 'aha ben bunu xxx projesinde yapmıştım ordan copy+paste edeyim' dediğimiz kodlar olmuştur. Bu tarz işlemleri her seferinde önceki projeye git kodu orda bul, kopyala, yapıştır gerekli yerleri değiştir gibi sıradan işlemleri tekrar tekrar yapmamak için menüden `Tools > New Snippet...`'i seçiyoruz.
 
 Ardından Sublime bie yeni bir dosya açıyor, dosya içeriği şöyle:
-    
+
     <snippet>
         <content><![CDATA[
     Hello, ${1:this} is a ${2:snippet}.
@@ -84,14 +86,14 @@ Kodu sayfaya çağırdıktan sonra, tab tuşuna bir kere bastığımızda `this`
 Değişikliklerimizi yapıp kaydetmek istediğimiz zaman snippet dosyasını Sublime'ın kendi dosyalarının bulunduğu alana kaydetmemiz önemli, zaten kaydetmek istediğimiz zaman bize direk kendi dosyalarının bulunduğu klasör içinde bulunan bizim için ayrılmış olan `User` klasörünü öneriyor. Kaydedeceiğimiz dosya adını yazıp dosya uzantısını ise `.sublime-snippet` yapıp kaydediyoruz.
 
 Hemen bir snippet'de biz yapalım. Menüden `Tools > New Snippet`'i seçip yeni bir dosya açıyoruz ve default değerleri kaldırıyoruz.
-    
+
     <snippet>
         <content><![CDATA[
     var request = \$.ajax({
         type: 'POST',
         url: '${1:url-to-ajax-request}',
         data: {
-            ${2:data}:${2:data}      
+            ${2:data}:${2:data}
         },
         beforeSend:function(){
             // loading gif
@@ -100,7 +102,7 @@ Hemen bir snippet'de biz yapalım. Menüden `Tools > New Snippet`'i seçip yeni 
             console.log(${3:response});
         },
         error:function(){
-            alert('Oops! There is an error reported!')  
+            alert('Oops! There is an error reported!')
         }
     });
     ]]></content>
@@ -108,7 +110,7 @@ Hemen bir snippet'de biz yapalım. Menüden `Tools > New Snippet`'i seçip yeni 
     </snippet>
 
 
-Örnek kodda standart bir jQuery.ajax fonksiyonu var, burada az önce anlatılanlardan farklı olan 3.ncü satırdaki `\` karakteri. Sublime snippetlerde `$` işareti ön tanımlı keywordlerde kullanıldığı için ekrana gelmesini istediğimiz jQuery'nin sembolü olan `$` işaretini kaçırmak(escape yapmak) zorundayız, escape yapmak içinde başına `\` karakterini koyuyoruz. Dosyayı kaydettikten sonra herhangi bir dosya içerisinde **ajax** yazıp tab'a bastığımızda yukarıdaki kodun tümü önümüzde geliyor. 
+Örnek kodda standart bir jQuery.ajax fonksiyonu var, burada az önce anlatılanlardan farklı olan 3.ncü satırdaki `\` karakteri. Sublime snippetlerde `$` işareti ön tanımlı keywordlerde kullanıldığı için ekrana gelmesini istediğimiz jQuery'nin sembolü olan `$` işaretini kaçırmak(escape yapmak) zorundayız, escape yapmak içinde başına `\` karakterini koyuyoruz. Dosyayı kaydettikten sonra herhangi bir dosya içerisinde **ajax** yazıp tab'a bastığımızda yukarıdaki kodun tümü önümüzde geliyor.
 
 Tab'a birkez daha basıyoruz ve url kısmı seçili hale geliyor, url'i değiştirip tekrar tab'a basıyoruz bu sefer data kısmındaki alanların ikiside seçili oluyor, orayıda değiştirdikten sonra, birkez daha tab'a basıyoruz ve success kısmındaki response seçiliyor, değiştirmemize gerek yok sanırım burayı şimdilik, bir kez daha tab'a bastığımızda snippet görevini bitiriyor ve cursor en alt satırın son karakterinin sonuna geliyor.
 
@@ -117,15 +119,15 @@ Tab'a birkez daha basıyoruz ve url kısmı seçili hale geliyor, url'i değişt
 Kısayolların ve Sublime'ın yeteneklerinin üzerinden geçtikten sonra ilk işimiz [Wbond](http://wbond.net)'un **[Sublime Package Control](http://wbond.net/sublime_packages/package_control)**'ü yüklemek olmalı.
 
 Sayfaya girdikten sonra soldaki **Install** butonuna tıklıyoruz, açılan sayfada aşşağıdaki gibi uzun bir kod satırı bizi karşılıyor.
-    
+
     :::python
     import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
-    
+
 Türkçe klavyelerde malesef backtick `` ` ``  karakterenin tam olarak bir karşılığı olmadığı için `View > Console` menüsünden Sublime'ın konsolunu açıyoruz ve yukarıdaki kodu copy+paste yapıp `Enter`'a basıyoruz. Sublime bizden kendisini restart etmemizi istiyor, restartı yaptıktan sonra **Sublime Package Control** kurulmuş durumda.
 
 `Cmd/Ctrl + Shift + P` yapıp `Command Palette`'i açtıktan sonra `control` yazıyoruz ve karşımıza yeni yüklenmiş menü öğeleri geliyor.
 
-![Package Control](../images/sublime-package-control.png)
+![Package Control](images/sublime-package-control.png)
 
 Burada en çok kullanacaklarımız:
 
@@ -146,12 +148,12 @@ Sublime Text' eklediğiniz klasörlerdeki dosyaların pathlerini tamamlamada kul
 #### AutoPEP8
 Yeni keşfettiğim plug'inlerden birisi **AutoPEP8.** Python diline aşina olanlar PEP8 standartlarını biliyordur mutlaka, normalde PEP8 desteği olan editörler size hatanın olduğu yeri söyler ve düzenlemenizi isterler. Burada durum biraz daha hızlı ceryan ediyor. Açık olan bir python dosyasındayken `kntrl/Ctrl + 8`'a bastığınızda yeni bir sayfa açılıyor ve yazdığınız kodun PEP8 ile düzenlenmiş hali diff edilmiş olarak karşınıza geliyor. İkinci bir kısayolda `kntrl/Ctrl + Shift + 8` olarak var. Bunu uyguladığınızda ise hiç diff olayına girmeden yazdığınız kodu PEP8 standartlarına göre çok hızlı bir şekilde düzenlemiş oluyor. Çok şahane!
 
-![AutoPEP8](../images/screen-shot-2013-03-01-at-92753-am.png)
+![AutoPEP8](images/screen-shot-2013-03-01-at-92753-am.png)
 
 #### Color Highlighter
 Color Highlighter eklentisi cursorunuzu hex, rgb ve rgba renklerin üzerine getirdiğinizde alanın backgroundunu o alanda yazılı olan renge çeviriyor. Karışıkmı geldi ? Hemen bir screenshot ile açıklayalım durumu.
 
-![Color Highlighter](../images/screen-shot-2013-03-01-at-93148-am.png)
+![Color Highlighter](images/screen-shot-2013-03-01-at-93148-am.png)
 
 #### ColorPick
 ColorPick eklentisi yine renklerle ilgili bir eklenti, herhangi bir döküman açıkken `Cmd/Ctrl + Shift + C` tuşlarına bastığınızda, işletim sisteminin default renk paletini getiriyor ve seçtiğiniz rengi, cursorun olduğu yere ekliyor.
@@ -161,7 +163,7 @@ ColorPick eklentisi yine renklerle ilgili bir eklenti, herhangi bir döküman a�
 #### Djaneiro
 Favori eklentilerimden biriside **Djaneiro.** Html tarafında Django Template taglerini tanıyor, syntax renklendiriyor, tagleri tamamlıyor, Python tarafında keywordleri var onlardada tamamlama yapıyor. Eğer Django üzerinde geliştirme yapıyorsanız olmazsa olmaz bir eklenti. Hemen bir screenshotla şenlenelim.
 
-![Djaneiro](../images/screen-shot-2013-03-01-at-101219-am.png)
+![Djaneiro](images/screen-shot-2013-03-01-at-101219-am.png)
 
 Django'nun template taglerinin çoğunu destekliyor, `if`, `else`, `endif`, `for`, `endfor` vs liste uzar gider.
 
@@ -169,7 +171,7 @@ Desteklediği tüm snippetlara göz atmak için **Djaneiro**'nun **[GitHub sayfa
 
 #### Emmet / Zen Coding
 Önceden **zen coding** vardı gayet güzel çalışıyodu, sonradan uğdate ettiler ismini değiştirmişler **Emmet** olmuş, eklentide tamamen değişmiş, sırf zorunluluktan kullanıyorum. Çok fazla sıkıntı yaşatıyor bazı durumlarda, hala hataları mevcut.
-    
+
 
     ul>li*2>a
     // satırını yazıp tab'a bastığınızda
@@ -177,7 +179,7 @@ Desteklediği tüm snippetlara göz atmak için **Djaneiro**'nun **[GitHub sayfa
         <li><a href=""></a></li>
         <li><a href=""></a></li>
     </ul>
-    // şeklinde html oluşturuyor    
+    // şeklinde html oluşturuyor
 
 Eski hali çok daha basitti, şimdi özellik ekleyeceğiz diye baya yüklü bir eklenti olmuş, bazen hata verip kapanıyor, bazende bolca bekletiyor. Eski hali olan **Zen Coding** 'i bulursam direk yeni halini kaldırıp eski eklentiyi kuracağım.
 
@@ -187,7 +189,7 @@ Gist eklentiside favorilerimden birisi, bulunduğunuz dosyayı yada dosyada seç
 #### Git
 Git'i tam olarak anlatmak sayfalar alabilir, gayet geniş ve kullanışlı bir plugin, git kullanmak için terminale gitmenize gerek kalmıyor, git ile ilgili hemen herşeyi buradan **Command Palette** üzerinden halledebiliyorsunuz. Git destekli bir proje klasörünü sublime'a attğınızda Command palette'i açıp git yazarsanız tüm özellikleri zaten geliyor karşınıza.
 
-![Git](../images/screen-shot-2013-03-01-at-111304-am.png)
+![Git](images/screen-shot-2013-03-01-at-111304-am.png)
 
 #### Inc-Dec-Value
 Bu eklentide şöyle birşey varmı acaba diyip bulduğum eklentilerden birisi, aynı browser'ların web developer toollarında nasıl rakamları ok tuşlarıyla artırıp azaltabiliyorsak aynısını editör içindede yapabiliyoruz. Eklentiyi kurduktan sonra imleci bir rakamın yanına getirip `Alt` tuşuna basıp ok tuşlarıyla yukarı/aşşağı bastığınızda değerin değiştiğini göreceksiniz. Sadece rakamlar için değil tanımlanmış kelimeler içinde geçerli bu eklenti. Ayarlarına gidip daha detaylı şekilde inceleyebilirsiniz
@@ -195,14 +197,14 @@ Bu eklentide şöyle birşey varmı acaba diyip bulduğum eklentilerden birisi, 
 #### Nettuts+ Fetch
 [Nettuts+](http://net.tutsplus.com/) ekibinin hazırlamış olduğu bu plugin, online dosyaları aynı gist plugininde olduğu gibi bulunduğunuz dosyanın içine getiriyor. Herhangi bir dosya açık değilse boş bir dosya oluşturup verilen linkin kaynak kodunu olduğu gibi alıyor. Linkleri düzenlemek ve paketleri indirebilmek gibi işe yarayan özellikleri var.
 
-![Fetch](../images/screen-shot-2013-03-01-at-112215-am.png)
+![Fetch](images/screen-shot-2013-03-01-at-112215-am.png)
 
 #### Sidebar Enhancements
 Sublime Text'in en büyük eksiğini kapatıyor. Soldaki sidebar'a eklediğiniz dosyalara sağ tıkladığınızda açılan menüde baya hiç bişey yok çünkü. Eklentiyi yüklemeden önceki ve yükledikten sonraki görünümleri çok farklı.
 
 Aradaki fark şöyle:
 
-![Sidebar Enhancements](../images/screen-shot-2013-03-01-at-113226-am.png)
+![Sidebar Enhancements](images/screen-shot-2013-03-01-at-113226-am.png)
 
 Tahmin edebileceğiniz gibi sağdaki eklenti yüklendikten sonraki hali : )
 
@@ -213,4 +215,4 @@ Kullandığım paketler şimdlik bunlar yeni eklediğim bir paket olursa yazıy�
 
 Bunlara ek olarak yine Package Control içinde sonradan eklenecek olan dillerin syntax highlighterları var, benim kullandıklarım `Less, Stylus, Jade, nginx, SCSS` gibi yeni olan diller. Arasında kullandığınız varsa onlarıda yüklerseniz tadından yenmez Sublime Text.
 
-Farklı eklentileri ve benim kullandıklarımdan daha iyisi var diyorsanız yorumlarda dört gözle bekliyorum. 
+Farklı eklentileri ve benim kullandıklarımdan daha iyisi var diyorsanız yorumlarda dört gözle bekliyorum.
