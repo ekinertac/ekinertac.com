@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Pelican'a geçiş | ekinertac </title>
+  <meta name="author" content="Ekin Ertaç">
+
+    
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="./favicon.png" rel="icon">
+  <link href="./theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="./theme/js/modernizr-2.0.js"></script>
+  <script src="./theme/js/ender.js"></script>
+  <script src="./theme/js/octopress.js" type="text/javascript"></script>
+
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="./">/bin/blog/ekinertac</a></h1>
+  </hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://ekinertac.com/" rel="subscribe-rss">RSS</a></li>
+  </ul>
+
+<!-- TODO: add search here
+<form action="" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:." />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+-->
+
+<ul class="main-navigation">
+  <li><a href="./">Blog</a></li>
+            <!-- TODO: add categories here? -->
+  </ul></nav>
+  <div id="main">
+    <div id="content">
+      <div>
+  <article class="hentry" role="article">
+    <header>
+          <h1 class="entry-title">Pelican'a geçiş</h1>
+          <p class="meta"><time datetime="2012-02-27T15:40:00" pubdate>Mon 27 February 2012</time></p>
+</header>
+
+  <div class="entry-content"><p><meta property="og:image" content="http://www.php2s.com/wp-content/uploads/2012/06/python-logo-official.png"/></p>
+<p>Konuya direk giriş yapmadan önce hayatımıza yeni yeni girmiş olan <strong>Static Blogging Engine</strong> terimi üzerinde durmak lazım. Nedir bu <strong>Static Blogging Engine</strong> ? </p>
+<p><strong>Static Blogging Engine</strong> kısa olarak yazdığınız <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> formatlı metin dosyalarınızı, muteşem bir şekilde static, yani herhangi bir server-side dile ihtiyaç duymadan yayınlayabileceğiniz html tabanlı bir bloga çeviren şahane yapıya deniyor.</p>
+<p>İstediğiniz kadar caching yapın, dosya sıkıştırın html kadar hızlı render edilen bir yazılıma sahip olmak pekte mümkün bir olay değil. Siz yazıları <strong>markdown</strong> olarak yazıyorsunuz, blog engine'iniz size html yapısnı oluşturuyor. Tabi html diyince aklınıza sadece yazılardan oluşan sayfalar gelmesin, bunun içersinde bir blogda ihtiyaç duyulan neredeyse herşey mevcut. Tagler, kategoriler, comment sistemi, sosyal medya entegresi vs ne ararsanız çoğunlukla var.</p>
+<p>Herşey o kadar basit düşünülmüş ki, ne bir admin paneliniz var ne başka bir yönetim sayfanız var. Herşey çok iyi bildiğiniz dosya sistemi üzerine kurulu.</p>
+<blockquote class="twitter-tweet" align="center" style="margin-bottom:20px"><p>I very much dislike the <a href="https://twitter.com/search/%23wordpress">#wordpress</a> editor … seriously considering moving everything to <a href="https://twitter.com/search/%23pelican">#pelican</a> <a href="http://t.co/IZeWLLR8" title="http://blog.notmyidea.org/pelican-a-simple-static-blog-generator-in-python.html">blog.notmyidea.org/pelican-a-simp…</a></p>&mdash; Andrew Lombardi (@kinabalu) <a href="https://twitter.com/kinabalu/status/273147147430543360">November 26, 2012</a></blockquote>
+
+<script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote></blockquote>
+<p>Bundan daha önce Wordpress başta olmak üzere Tumblr dan tutunda özene bezene CodeIgniter da yazdığım blog sistemlerine kadar çoğunu kullandım. Son olarak Django'ya çok fazla yöneldiğim için Django çatısı altında bir blog oluşturdum ama aklımın bir köşesinde hep bir <strong>Static Blogging Engine</strong> kullanarak bir blog yapma isteğim vardı. </p>
+<p>Peki kullanabileceğimiz Engine'ler hangileri ? </p>
+<ul>
+<li>
+<h4 id="octopress"><a href="http://octopress.org/">Octopress</a></h4>
+<br />
+Octopress, <a href="http://brandonmathis.com/">Brandon Mathis</a> tarafından tasarlanan <a href="http://github.com/mojombo/jekyll">Jekyll</a> için hazırlanan, <a href="http://pages.github.com/">Github Pages</a>'in arkasında da kullanılan bir statik blog framework'ü. En popüler engine olarak görülüyor ve gerçektende öyle.</li>
+</ul>
+<p>Octopress'den sonra Ruby ile hazırlanmış <a href="http://webby.rubyforge.org/">Webby</a>, <a href="http://staticmatic.rubyforge.org/">StaticMatic</a> ve <a href="http://cloudhead.io/toto">toto</a> isimlerinde farklı blog engine'leride mevcut.</p>
+<ul>
+<li>
+<h4 id="pelican"><a href="http://docs.getpelican.com/en/latest/">Pelican</a></h4>
+<br />
+Pelican benimde kullandığım Python için yazılmış Octopress kadar başarılı bir blog framework'ü. Pelican'ı seçmemdeki tek amaç Python ekosistemine Ruby'e kıyasla çok daha alışkın olmam. Django/Jinja2 template taglerini desteklemeside ikinci büyük sebebim. Templateleri düzenlemek elim bu template diline alışkın olduğum için çok kolay oldu benim için.<p><a href="http://calepin.co/">Calepin</a> ise Pelican için hazırlanmış, Dropbox üzerinde çalışan bir             blog <strong>hosting</strong> sistemi ve evet tahmin edebileceğiniz gibi tamamen <strong>ücretsiz</strong>. Calepin'in kullandığı fikir çok iyi bu arada, bahsetmeden geçemeyeceğim.</p>
+</li>
+<li>
+<h4 id="blosxom">Blosxom</h4>
+</li>
+<li>
+<p>Blosxom için malesef link veremiyorum çünkü bu servis artık <strong><a href="http://www.blosxom.com/">kapatılmış durumda</a></strong>. Static Blogging Engine sistemini geliştiren ilk servis olduğu için buraya eklemeyi uygun gördüm. Belki merak edip araştırmak isteyenler olabilir.</p>
+</li>
+<li>
+<h4 id="second-crack"><a href="https://github.com/marcoarment/secondcrack">Second Crack</a></h4>
+<p>Second Crack, PHP için hazırlanmış bir diğer statik blogging framework'ü.</p>
+</li>
+<li>
+<h4 id="blacksmith"><a href="http://blog.nodejitsu.com/introducing-blacksmith">Blacksmith</a></h4>
+<p>Blacksmith ise Node.js'e daha yakın olanların kullanacağı 'cutting-edge' statik blog sistemlerinden en genci.</p>
+</li>
+<li>
+<p>Bunlar bana yetmez daha fazla blog engine istiyorum diyenleriniz varsa 32 adet blog engine'in anlatıldığı <a href="https://twitter.com/treitnauer">Timo Reitnauer</a>'ın yazmış olduğu devasa yazıya <a href="https://iwantmyname.com/blog/2011/02/list-static-website-generators.html">göz atabilirsiniz</a>.</p>
+</li>
+</ul>
+<p><strong>Pelican</strong> kullandığım için konuya bu statik framework üzerinden devam ediyorum. </p>
+<p>Pelican'ın kurulumu, tema seçimi ve yayına alması üzerinde editleme yapmayacaksaksanız bir kaç dakikanızı alabilir.</p>
+<p>Kendimize bir terminal açıp hemen virtualenv'mizi oluşturmaya başlıyoruz. (sisteminizde virtualenv'nin kurulu olduğunu düşünüyorum, kurulu olmayanlar <a href="/virtualenv-kurulumu.html">buradan devam edebilirler</a>)</p>
+<div class="codehilite"><pre><span class="err">$</span> <span class="n">mkdir</span> <span class="n">pelican</span><span class="o">-</span><span class="n">blog</span>
+<span class="err">$</span> <span class="n">cd</span> <span class="n">peli</span><span class="o">*</span>
+<span class="err">$</span> <span class="n">virtualenv</span> <span class="n">env</span>
+<span class="err">$</span> <span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span>
+</pre></div>
+
+
+<p><sub><sup>* işareti klavyedeki <code>tab</code> karateri için</sup></sub></p>
+<p>Pelican kurulumu bu kadar basit, ancak küçücük bir sıkıntımız var. Pelican'da Markdown desteği opsiyonel olarak geliyor o yüzden pelican kurulduktan sonrada Markdown kurmaya ihtiyacımız var.</p>
+<div class="codehilite"><pre><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">Markdown</span>
+</pre></div>
+
+
+<p>Markdown da virtualenv'mize kurulduktan sonra, Pelican için hemen bir yapı oluşturabiliyoruz</p>
+<div class="codehilite"><pre><span class="err">$</span> <span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+
+
+<p>Bu komutu çalıştırdıktan sonra wizard bize birkaç soru soruyor</p>
+<div class="codehilite"><pre><span class="n">Welcome</span> <span class="n">to</span> <span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span> <span class="n">v3</span><span class="mf">.1.1</span><span class="p">.</span>
+
+<span class="n">This</span> <span class="n">script</span> <span class="n">will</span> <span class="n">help</span> <span class="n">you</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">Pelican</span><span class="o">-</span><span class="n">based</span> <span class="n">website</span><span class="p">.</span>
+
+<span class="n">Please</span> <span class="n">answer</span> <span class="n">the</span> <span class="n">following</span> <span class="n">questions</span> <span class="n">so</span> <span class="n">this</span> <span class="n">script</span> <span class="n">can</span> <span class="n">generate</span> <span class="n">the</span> <span class="n">files</span>
+<span class="n">needed</span> <span class="n">by</span> <span class="n">Pelican</span><span class="p">.</span>
+
+<span class="o">&gt;</span> <span class="n">Where</span> <span class="k">do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">create</span> <span class="n">your</span> <span class="n">new</span> <span class="n">web</span> <span class="n">site</span><span class="o">?</span> <span class="p">[.]</span> <span class="n">project</span>
+<span class="o">&gt;</span> <span class="n">What</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">title</span> <span class="n">of</span> <span class="n">this</span> <span class="n">web</span> <span class="n">site</span><span class="o">?</span> <span class="n">Ekin</span> <span class="n">Erta</span><span class="err">ç&#39;</span><span class="n">s</span> <span class="n">WebBlog</span>
+<span class="o">&gt;</span> <span class="n">Who</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">author</span> <span class="n">of</span> <span class="n">this</span> <span class="n">web</span> <span class="n">site</span><span class="o">?</span> <span class="n">ekinertac</span>
+<span class="o">&gt;</span> <span class="n">What</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="k">default</span> <span class="n">language</span> <span class="n">of</span> <span class="n">this</span> <span class="n">web</span> <span class="n">site</span><span class="o">?</span> <span class="p">[</span><span class="n">en</span><span class="p">]</span> <span class="n">tr</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">URL</span> <span class="n">prefix</span><span class="o">?</span> <span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.,</span> <span class="n">http</span><span class="o">:</span><span class="c1">//example.com   (Y/n) n</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">article</span> <span class="n">pagination</span><span class="o">?</span> <span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="n">Y</span>
+<span class="o">&gt;</span> <span class="n">How</span> <span class="n">many</span> <span class="n">articles</span> <span class="n">per</span> <span class="n">page</span> <span class="k">do</span> <span class="n">you</span> <span class="n">want</span><span class="o">?</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="mi">10</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">Makefile</span> <span class="n">to</span> <span class="n">easily</span> <span class="n">manage</span> <span class="n">your</span> <span class="n">website</span><span class="o">?</span> <span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="n">Y</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">an</span> <span class="k">auto</span><span class="o">-</span><span class="n">reload</span> <span class="o">&amp;</span> <span class="n">simpleHTTP</span> <span class="n">script</span> <span class="n">to</span> <span class="n">assist</span> <span class="n">with</span> <span class="n">theme</span> <span class="n">and</span> <span class="n">site</span> <span class="n">development</span><span class="o">?</span> <span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="n">Y</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">your</span> <span class="n">website</span> <span class="n">using</span> <span class="n">FTP</span><span class="o">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">N</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">your</span> <span class="n">website</span> <span class="n">using</span> <span class="n">SSH</span><span class="o">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">N</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">your</span> <span class="n">website</span> <span class="n">using</span> <span class="n">Dropbox</span><span class="o">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">N</span>
+<span class="n">Done</span><span class="p">.</span> <span class="n">Your</span> <span class="n">new</span> <span class="n">project</span> <span class="n">is</span> <span class="n">available</span> <span class="n">at</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">ekinertac</span><span class="o">/</span><span class="n">Sites</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">project</span>
+</pre></div>
+
+
+<p>Sorduğu sorular sırasıyla,</p>
+<ul>
+<li>Blog dosyalarını nerede tutmak istediğinizi soruyor, <code>project</code> yazarak bulunduğum klasörde <code>project</code> adında bir klasör oluşturup onun içine kurmasını istedim</li>
+<li>Blog başlığı ?</li>
+<li>Blog yazarı ?</li>
+<li>Web sitesinin dili ?</li>
+<li>Kullanacağınız domain ?</li>
+<li>Pagination kullanacakmısınız ?</li>
+<li>Sayfa başına kaç adet yazı olacağı ?</li>
+<li>Sayfanızı kolayca konfigüre edebilmek için Makefile oluşuturulsunmu ?</li>
+<li>templateler için veya yazı yazarken live olarak değişiklikleri görebilmeniz için Pelicanın sunduğu script desteği ?</li>
+<li>FTP desteği ?</li>
+<li>SSH desteği ?</li>
+<li>Dropbox desteği ?</li>
+</ul>
+<p>Bu sorulara cevap verdikten sonra blogumuz neredeyse hazır durumda.</p>
+<p><code>project/content</code> klasörünün içine girip ilk yazınızı yazmaya başlayabilirsiniz. Klasörün içinde <code>first-post.md</code> adlı bir dosya oluşturuyorum ve dosyanın içine <strong>herhangi</strong> bir text editöründe</p>
+<div class="codehilite"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">Pelican</span><span class="err">&#39;</span><span class="n">a</span> <span class="n">ge</span><span class="err">ç</span><span class="n">i</span><span class="err">ş</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">15</span><span class="o">:</span><span class="mi">40</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">python</span><span class="o">,</span> <span class="n">pelican</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Writings</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">pelican</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">gecis</span>
+<span class="n">Author</span><span class="o">:</span> <span class="n">ekinertac</span>
+</pre></div>
+
+
+<p>satırlarını ekliyorum. Bu satırlar görüldüğü gibi blog post'unun meta bilgilerini saklıyor.<br />
+İki alt satıra geçerek yazmaya başlıyorum.</p>
+<div class="codehilite"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">Pelican</span><span class="err">&#39;</span><span class="n">a</span> <span class="n">ge</span><span class="err">ç</span><span class="n">i</span><span class="err">ş</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">15</span><span class="o">:</span><span class="mi">40</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">python</span><span class="o">,</span> <span class="n">pelican</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Writings</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">pelican</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">gecis</span>
+<span class="n">Author</span><span class="o">:</span> <span class="n">ekinertac</span>
+
+<span class="n">Konuya</span> <span class="n">direk</span> <span class="n">giri</span><span class="err">ş</span> <span class="n">yapmadan</span> <span class="err">ö</span><span class="n">nce</span> <span class="n">hayat</span><span class="err">ı</span><span class="n">m</span><span class="err">ı</span><span class="n">za</span> <span class="n">yeni</span> <span class="n">yeni</span> <span class="n">girmi</span><span class="err">ş</span> <span class="n">olan</span> <span class="o">**</span><span class="n">Static</span> <span class="n">Blogging</span> <span class="n">Engine</span><span class="o">**</span> <span class="n">terimi</span> <span class="err">ü</span><span class="n">zerinde</span> <span class="n">durmak</span> <span class="n">laz</span><span class="err">ı</span><span class="n">m</span><span class="o">.</span> <span class="n">Nedir</span> <span class="n">bu</span> <span class="o">**</span><span class="n">Static</span> <span class="n">Blogging</span> <span class="n">Engine</span><span class="o">**</span> <span class="o">?</span>
+</pre></div>
+
+
+<p>hemen ardından hızlı bir test için terminale geri dönüp</p>
+<div class="codehilite"><pre><span class="err">$</span> <span class="n">make</span> <span class="n">html</span>
+</pre></div>
+
+
+<p>komutunu çalıştırıyorum, ve herhangi bir hata yoksa, <code>project/output</code> klasörü altında .html dosyalarım <strong>yayınlanmaya hazır</strong> olarak bekliyor.</p>
+<p>Daha fazla dökümantasyon için Pelican'ın <strong>bol detaylı</strong> <a href="http://docs.getpelican.com/en/latest/getting_started.html">dökümantasyon</a> sayfasını ziyaret edebilirsiniz.</p></div>
+    <footer>
+      <p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">ekinertac</span>
+  </span>
+  <time datetime="2012-02-27T15:40:00" pubdate>Mon 27 February 2012</time>    <span class="categories">
+        <a class="category" href="./tag/python.html">python</a>
+        <a class="category" href="./tag/pelican.html">pelican</a>
+      </span>
+  </p>    </footer>
+  </article>
+
+    <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+  </div>
+<aside class="sidebar">
+  <section>
+    <img class="no-style" src="./theme/images/ekin.png" alt="@ekinertac">
+    <h1>Ekin Ertac</h1>
+    <p>Front-end Developer,<br>
+    Back-end Enthusiast</p>
+  </section>
+  <section>
+    <iframe src="http://githubbadge.appspot.com/badge/ekinertac?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder=0></iframe>
+  </section>
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+            <li class="post">
+          <a href="./sublime-text.html">Sublime Text</a>
+      </li>
+            <li class="post">
+          <a href="./pelican-a-gecis.html">Pelican'a geçiş</a>
+      </li>
+            <li class="post">
+          <a href="./virtualenv-kurulumu.html">Virtual Environment Kurulumu</a>
+      </li>
+          </ul>
+  </section>
+    <section>
+
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+              <li><a href="./category/tutorials.html">Tutorials</a></li>
+              <li><a href="./category/writings.html">Writings</a></li>
+          </ul>
+  </section>
+  
+  <section>
+  <h1>Tags</h1>
+      <a href="./tag/python.html">python</a>,      <a href="./tag/pelican.html">pelican</a>,      <a href="./tag/sublime-text.html">sublime text</a>,      <a href="./tag/text-editor.html">text editor</a>,      <a href="./tag/virtualenv.html">virtualenv</a>    </section>
+
+        <section>
+        <h1>Social</h2>
+        <ul>
+            <li><a href="http://ekinertac.com/" type="application/rss+xml" rel="alternate">RSS</a></li>
+                    <li><a href="http://twitter.com/ekinertac" target="_blank">twitter</a></li>
+                    <li><a href="http://github.com/ekinertac" target="_blank">github</a></li>
+                    <li><a href="http://tr.linkedin.com/in/ekinertac" target="_blank">linkedin</a></li>
+                </ul>
+    </section>
+      <section>
+        <h1>Blogroll</h2>
+        <ul>
+                    <li><a href="http://fatiherikli.com" target="_blank">Fatih Erikli</a></li>
+                    <li><a href="http://olgaysezgin.com" target="_blank">Olgay Sezgin</a></li>
+                    <li><a href="http://yasaricli.com" target="_blank">Yaşar İçli</a></li>
+                    <li><a href="http://erdemozkol.com" target="_blank">Erdem Özkol</a></li>
+                </ul>
+    </section>
+</aside>      <aside class="sidebar">
+  <section>
+    <img class="no-style" src="./theme/images/ekin.png" alt="@ekinertac">
+    <h1>Ekin Ertac</h1>
+    <p>Front-end Developer,<br>
+    Back-end Enthusiast</p>
+  </section>
+  <section>
+    <iframe src="http://githubbadge.appspot.com/badge/ekinertac?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder=0></iframe>
+  </section>
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+            <li class="post">
+          <a href="./sublime-text.html">Sublime Text</a>
+      </li>
+            <li class="post">
+          <a href="./pelican-a-gecis.html">Pelican'a geçiş</a>
+      </li>
+            <li class="post">
+          <a href="./virtualenv-kurulumu.html">Virtual Environment Kurulumu</a>
+      </li>
+          </ul>
+  </section>
+    <section>
+
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+              <li><a href="./category/tutorials.html">Tutorials</a></li>
+              <li><a href="./category/writings.html">Writings</a></li>
+          </ul>
+  </section>
+  
+  <section>
+  <h1>Tags</h1>
+      <a href="./tag/python.html">python</a>,      <a href="./tag/pelican.html">pelican</a>,      <a href="./tag/sublime-text.html">sublime text</a>,      <a href="./tag/text-editor.html">text editor</a>,      <a href="./tag/virtualenv.html">virtualenv</a>    </section>
+
+        <section>
+        <h1>Social</h2>
+        <ul>
+            <li><a href="http://ekinertac.com/" type="application/rss+xml" rel="alternate">RSS</a></li>
+                    <li><a href="http://twitter.com/ekinertac" target="_blank">twitter</a></li>
+                    <li><a href="http://github.com/ekinertac" target="_blank">github</a></li>
+                    <li><a href="http://tr.linkedin.com/in/ekinertac" target="_blank">linkedin</a></li>
+                </ul>
+    </section>
+      <section>
+        <h1>Blogroll</h2>
+        <ul>
+                    <li><a href="http://fatiherikli.com" target="_blank">Fatih Erikli</a></li>
+                    <li><a href="http://olgaysezgin.com" target="_blank">Olgay Sezgin</a></li>
+                    <li><a href="http://yasaricli.com" target="_blank">Yaşar İçli</a></li>
+                    <li><a href="http://erdemozkol.com" target="_blank">Erdem Özkol</a></li>
+                </ul>
+    </section>
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Ekin Ertaç -
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+      <script type="text/javascript">
+	    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+	    try {
+	        var pageTracker = _gat._getTracker("UA-9694343-1");
+	    pageTracker._trackPageview();
+	    } catch(err) {}
+	</script>
+	<script type="text/javascript">
+	  var disqus_shortname = 'ekinertac-pelican';
+	  (function() {
+	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	   })();
+	</script>
+</body>
+</html>

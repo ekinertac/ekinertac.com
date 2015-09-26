@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>/bin/blog/ekinertac</title><link href="http://ekinertac.com/" rel="alternate"></link><link href="http://ekinertac.com/feeds/Tutorials.atom.xml" rel="self"></link><id>http://ekinertac.com/</id><updated>2012-02-26T11:20:00+02:00</updated><entry><title>Virtual Environment Kurulumu</title><link href="http://ekinertac.com/virtualenv-kurulumu.html" rel="alternate"></link><updated>2012-02-26T11:20:00+02:00</updated><author><name>ekinertac</name></author><id>tag:ekinertac.com,2012-02-26:virtualenv-kurulumu.html</id><summary type="html">&lt;p&gt;Eğer python üzerinde geliştirme yapacaksanız, &lt;code&gt;virtualenv&lt;/code&gt; yani Sanal Geliştirme Ortamı kurmanız çok çok faydanıza olacaktır. &lt;br /&gt;
+Virtualenv'i farklı python versiyonları, farklı paketler, kendi yazdığınız executable scriptler için kullanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Sisteminizde &lt;code&gt;easy_install, pip&lt;/code&gt; gibi python paket manager'ları yüklümü değilmi kontrol edelim, eğer hiç biri yüklü değilse  kuruluma &lt;code&gt;setup-tools&lt;/code&gt; ile başlayalım.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;easy_install&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ikisinden birini terminalde çalıştırdığınızda &lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;easy_install&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;satırlarından farklı çıktı alıyorsanız ikisinden birisi kuruludur. Eğer &lt;code&gt;easy_install&lt;/code&gt; kurulu ise &lt;code&gt;pip&lt;/code&gt; kurmamız şart.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;easy_install&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;sistemde &lt;code&gt;easy_install&lt;/code&gt; dahi yüklü değilse &lt;code&gt;setup-tools&lt;/code&gt; ile devam ediyoruz. &lt;a href="https://pypi.python.org/pypi/setuptools#downloads"&gt;PyPi - SetupTools&lt;/a&gt; sayfasından yanında &lt;strong&gt;Source&lt;/strong&gt; yazan linke tıklayıp son sürümü ediniyoruz.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="n"&gt;zxvf&lt;/span&gt; &lt;span class="n"&gt;setuptools&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.6&lt;/span&gt;&lt;span class="n"&gt;c11&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gz&lt;/span&gt; 
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;setuptools&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.6&lt;/span&gt;&lt;span class="n"&gt;c11&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;yazdıktan sonra setuptools kurulmuş durumda. Eğer &lt;code&gt;permission&lt;/code&gt; hatası alırsanız &lt;code&gt;sudo python setup.py install&lt;/code&gt; deneyerek kurulumu root olarak tamamlayabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Setuptools kurulumu tamamlandıktan sonra:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;easy_install&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;virtualenv&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;virtualenv&lt;/span&gt; &lt;span class="n"&gt;env_adi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Virtualenv yapısı için bir klasör yapısı geliştirmenizi öneririm yoksa işler sarpa sarıyor bir süre sonra.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;Sites&lt;/span&gt;
+    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;proje_adi_1&lt;/span&gt;
+    &lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;env_adi&lt;/span&gt;
+    &lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt;
+    &lt;span class="err"&gt;│&lt;/span&gt;
+    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;proje_adi_2&lt;/span&gt;
+    &lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;env_adi&lt;/span&gt;
+    &lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt;
+    &lt;span class="err"&gt;│&lt;/span&gt;
+    &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;proje_adi_3&lt;/span&gt;
+        &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;env_adi&lt;/span&gt;
+        &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Şeklinde oluşan bir yapı şimdiye kadar kullandığım en rahat ettiğim klasör yapısı.&lt;/p&gt;</summary><category term="python"></category><category term="virtualenv"></category></entry></feed>

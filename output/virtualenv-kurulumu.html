@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Virtual Environment Kurulumu | ekinertac </title>
+  <meta name="author" content="Ekin Ertaç">
+
+    
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="./favicon.png" rel="icon">
+  <link href="./theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="./theme/js/modernizr-2.0.js"></script>
+  <script src="./theme/js/ender.js"></script>
+  <script src="./theme/js/octopress.js" type="text/javascript"></script>
+
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="./">/bin/blog/ekinertac</a></h1>
+  </hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://ekinertac.com/" rel="subscribe-rss">RSS</a></li>
+  </ul>
+
+<!-- TODO: add search here
+<form action="" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:." />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+-->
+
+<ul class="main-navigation">
+  <li><a href="./">Blog</a></li>
+            <!-- TODO: add categories here? -->
+  </ul></nav>
+  <div id="main">
+    <div id="content">
+      <div>
+  <article class="hentry" role="article">
+    <header>
+          <h1 class="entry-title">Virtual Environment Kurulumu</h1>
+          <p class="meta"><time datetime="2012-02-26T11:20:00" pubdate>Sun 26 February 2012</time></p>
+</header>
+
+  <div class="entry-content"><p>Eğer python üzerinde geliştirme yapacaksanız, <code>virtualenv</code> yani Sanal Geliştirme Ortamı kurmanız çok çok faydanıza olacaktır. <br />
+Virtualenv'i farklı python versiyonları, farklı paketler, kendi yazdığınız executable scriptler için kullanabilirsiniz.</p>
+<p>Sisteminizde <code>easy_install, pip</code> gibi python paket manager'ları yüklümü değilmi kontrol edelim, eğer hiç biri yüklü değilse  kuruluma <code>setup-tools</code> ile başlayalım.</p>
+<div class="codehilite"><pre><span class="err">$</span> <span class="n">easy_install</span>
+<span class="err">$</span> <span class="n">pip</span>
+</pre></div>
+
+
+<p>ikisinden birini terminalde çalıştırdığınızda </p>
+<div class="codehilite"><pre><span class="o">-</span><span class="n">bash</span><span class="o">:</span> <span class="n">easy_install</span><span class="o">:</span> <span class="n">command</span> <span class="n">not</span> <span class="n">found</span>
+<span class="o">-</span><span class="n">bash</span><span class="o">:</span> <span class="n">pip</span><span class="o">:</span> <span class="n">command</span> <span class="n">not</span> <span class="n">found</span>
+</pre></div>
+
+
+<p>satırlarından farklı çıktı alıyorsanız ikisinden birisi kuruludur. Eğer <code>easy_install</code> kurulu ise <code>pip</code> kurmamız şart.</p>
+<div class="codehilite"><pre><span class="err">$</span> <span class="n">easy_install</span> <span class="n">pip</span>
+</pre></div>
+
+
+<p>sistemde <code>easy_install</code> dahi yüklü değilse <code>setup-tools</code> ile devam ediyoruz. <a href="https://pypi.python.org/pypi/setuptools#downloads">PyPi - SetupTools</a> sayfasından yanında <strong>Source</strong> yazan linke tıklayıp son sürümü ediniyoruz.</p>
+<div class="codehilite"><pre><span class="err">$</span> <span class="n">tar</span> <span class="n">zxvf</span> <span class="n">setuptools</span><span class="o">-</span><span class="mf">0.6</span><span class="n">c11</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span> 
+<span class="err">$</span> <span class="n">cd</span> <span class="n">setuptools</span><span class="o">-</span><span class="mf">0.6</span><span class="n">c11</span>
+<span class="err">$</span> <span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">install</span>
+</pre></div>
+
+
+<p>yazdıktan sonra setuptools kurulmuş durumda. Eğer <code>permission</code> hatası alırsanız <code>sudo python setup.py install</code> deneyerek kurulumu root olarak tamamlayabilirsiniz.</p>
+<p>Setuptools kurulumu tamamlandıktan sonra:</p>
+<div class="codehilite"><pre><span class="err">$</span> <span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">pip</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
+<span class="err">$</span> <span class="n">virtualenv</span> <span class="n">env_adi</span>
+</pre></div>
+
+
+<p>Virtualenv yapısı için bir klasör yapısı geliştirmenizi öneririm yoksa işler sarpa sarıyor bir süre sonra.</p>
+<div class="codehilite"><pre><span class="err">└──</span> <span class="o">~/</span><span class="n">Sites</span>
+    <span class="err">├──</span> <span class="n">proje_adi_1</span>
+    <span class="err">│</span>   <span class="err">└──</span> <span class="n">env_adi</span>
+    <span class="err">│</span>   <span class="err">└──</span> <span class="n">project</span>
+    <span class="err">│</span>
+    <span class="err">├──</span> <span class="n">proje_adi_2</span>
+    <span class="err">│</span>   <span class="err">└──</span> <span class="n">env_adi</span>
+    <span class="err">│</span>   <span class="err">└──</span> <span class="n">project</span>
+    <span class="err">│</span>
+    <span class="err">└──</span> <span class="n">proje_adi_3</span>
+        <span class="err">└──</span> <span class="n">env_adi</span>
+        <span class="err">└──</span> <span class="n">project</span>
+</pre></div>
+
+
+<p>Şeklinde oluşan bir yapı şimdiye kadar kullandığım en rahat ettiğim klasör yapısı.</p></div>
+    <footer>
+      <p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">ekinertac</span>
+  </span>
+  <time datetime="2012-02-26T11:20:00" pubdate>Sun 26 February 2012</time>    <span class="categories">
+        <a class="category" href="./tag/python.html">python</a>
+        <a class="category" href="./tag/virtualenv.html">virtualenv</a>
+      </span>
+  </p>    </footer>
+  </article>
+
+    <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+  </div>
+<aside class="sidebar">
+  <section>
+    <img class="no-style" src="./theme/images/ekin.png" alt="@ekinertac">
+    <h1>Ekin Ertac</h1>
+    <p>Front-end Developer,<br>
+    Back-end Enthusiast</p>
+  </section>
+  <section>
+    <iframe src="http://githubbadge.appspot.com/badge/ekinertac?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder=0></iframe>
+  </section>
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+            <li class="post">
+          <a href="./sublime-text.html">Sublime Text</a>
+      </li>
+            <li class="post">
+          <a href="./pelican-a-gecis.html">Pelican'a geçiş</a>
+      </li>
+            <li class="post">
+          <a href="./virtualenv-kurulumu.html">Virtual Environment Kurulumu</a>
+      </li>
+          </ul>
+  </section>
+    <section>
+
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+              <li><a href="./category/tutorials.html">Tutorials</a></li>
+              <li><a href="./category/writings.html">Writings</a></li>
+          </ul>
+  </section>
+  
+  <section>
+  <h1>Tags</h1>
+      <a href="./tag/python.html">python</a>,      <a href="./tag/pelican.html">pelican</a>,      <a href="./tag/sublime-text.html">sublime text</a>,      <a href="./tag/text-editor.html">text editor</a>,      <a href="./tag/virtualenv.html">virtualenv</a>    </section>
+
+        <section>
+        <h1>Social</h2>
+        <ul>
+            <li><a href="http://ekinertac.com/" type="application/rss+xml" rel="alternate">RSS</a></li>
+                    <li><a href="http://twitter.com/ekinertac" target="_blank">twitter</a></li>
+                    <li><a href="http://github.com/ekinertac" target="_blank">github</a></li>
+                    <li><a href="http://tr.linkedin.com/in/ekinertac" target="_blank">linkedin</a></li>
+                </ul>
+    </section>
+      <section>
+        <h1>Blogroll</h2>
+        <ul>
+                    <li><a href="http://fatiherikli.com" target="_blank">Fatih Erikli</a></li>
+                    <li><a href="http://olgaysezgin.com" target="_blank">Olgay Sezgin</a></li>
+                    <li><a href="http://yasaricli.com" target="_blank">Yaşar İçli</a></li>
+                    <li><a href="http://erdemozkol.com" target="_blank">Erdem Özkol</a></li>
+                </ul>
+    </section>
+</aside>      <aside class="sidebar">
+  <section>
+    <img class="no-style" src="./theme/images/ekin.png" alt="@ekinertac">
+    <h1>Ekin Ertac</h1>
+    <p>Front-end Developer,<br>
+    Back-end Enthusiast</p>
+  </section>
+  <section>
+    <iframe src="http://githubbadge.appspot.com/badge/ekinertac?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder=0></iframe>
+  </section>
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+            <li class="post">
+          <a href="./sublime-text.html">Sublime Text</a>
+      </li>
+            <li class="post">
+          <a href="./pelican-a-gecis.html">Pelican'a geçiş</a>
+      </li>
+            <li class="post">
+          <a href="./virtualenv-kurulumu.html">Virtual Environment Kurulumu</a>
+      </li>
+          </ul>
+  </section>
+    <section>
+
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+              <li><a href="./category/tutorials.html">Tutorials</a></li>
+              <li><a href="./category/writings.html">Writings</a></li>
+          </ul>
+  </section>
+  
+  <section>
+  <h1>Tags</h1>
+      <a href="./tag/python.html">python</a>,      <a href="./tag/pelican.html">pelican</a>,      <a href="./tag/sublime-text.html">sublime text</a>,      <a href="./tag/text-editor.html">text editor</a>,      <a href="./tag/virtualenv.html">virtualenv</a>    </section>
+
+        <section>
+        <h1>Social</h2>
+        <ul>
+            <li><a href="http://ekinertac.com/" type="application/rss+xml" rel="alternate">RSS</a></li>
+                    <li><a href="http://twitter.com/ekinertac" target="_blank">twitter</a></li>
+                    <li><a href="http://github.com/ekinertac" target="_blank">github</a></li>
+                    <li><a href="http://tr.linkedin.com/in/ekinertac" target="_blank">linkedin</a></li>
+                </ul>
+    </section>
+      <section>
+        <h1>Blogroll</h2>
+        <ul>
+                    <li><a href="http://fatiherikli.com" target="_blank">Fatih Erikli</a></li>
+                    <li><a href="http://olgaysezgin.com" target="_blank">Olgay Sezgin</a></li>
+                    <li><a href="http://yasaricli.com" target="_blank">Yaşar İçli</a></li>
+                    <li><a href="http://erdemozkol.com" target="_blank">Erdem Özkol</a></li>
+                </ul>
+    </section>
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Ekin Ertaç -
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+      <script type="text/javascript">
+	    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+	    try {
+	        var pageTracker = _gat._getTracker("UA-9694343-1");
+	    pageTracker._trackPageview();
+	    } catch(err) {}
+	</script>
+	<script type="text/javascript">
+	  var disqus_shortname = 'ekinertac-pelican';
+	  (function() {
+	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	   })();
+	</script>
+</body>
+</html>
