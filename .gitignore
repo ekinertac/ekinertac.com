@@ -1,6 +1,4 @@
-output
-env
 .DS_Store
-src.pid
-*.pid
-*.py[cod]
+node_modules/
+dist/
+npm-debug.log
