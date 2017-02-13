@@ -1,0 +1,24 @@
+body {
+    font-family: 'Inconsolata', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 100px 0;
+    color: #F8F8E6;
+    background-color: #1E1F29;
+}
+
+a, a:hover {
+    color: #5AF575;
+}
+
+span.name   { color: #FA5454; }
+span.at     { color: #F2F887; }
+span.host   { color: #72DFFE; }
+span.prompt { color: #FA7ABE; }
+h3          { color: #BB95EC; }
+
+li { list-style: none; }
+li > span { color: #B295FC; }
+
+p { margin: 0; padding: 0; }
+
